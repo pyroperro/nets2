@@ -7,7 +7,6 @@ public class MulticastAlive {
 
     private static final String MESSAGE = "alive";
     private static final int BUFFER_SIZE = 1024;
-    private static final int TTL = 3;
     private static final int TIMEOUT_MS = 1000;
 
     private static void sendMulticastMessage(
