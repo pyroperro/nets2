@@ -41,7 +41,6 @@ public class FileClient {
             out.write(nameBytes);
             out.writeLong(size);
 
-            // ---- данные ----
             byte[] buffer = new byte[BUFFER_SIZE];
             int read;
             while ((read = fileIn.read(buffer)) != -1) {
@@ -49,12 +48,11 @@ public class FileClient {
             }
             out.flush();
 
-            // ---- ответ ----
             byte status = in.readByte();
             if (status == 0) {
-                System.out.println("Transfer successful");
+                System.out.println("Файл отправлен успешно");
             } else {
-                System.out.println("Transfer failed");
+                System.out.println("Отправка не удалась");
             }
         }
     }
