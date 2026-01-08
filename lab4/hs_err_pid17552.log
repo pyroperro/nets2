@@ -1,0 +1,240 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 4030464 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3707), pid=17552, tid=8132
+#
+# JRE version:  (23.0.2+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (23.0.2+7-58, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2\lib\idea_rt.jar=53080:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 snakegame.ui.MainScreen
+
+Host: AMD Ryzen 7 5700U with Radeon Graphics         , 16 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Wed Jan  7 21:54:22 2026 Novosibirsk Standard Time elapsed time: 0.026364 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001fe6c7e5250):  JavaThread "Unknown thread" [_thread_in_vm, id=8132, stack(0x000000e558100000,0x000000e558200000) (1024K)]
+
+Stack: [0x000000e558100000,0x000000e558200000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6e0b99]  (no source info available)
+V  [jvm.dll+0x87e2b3]  (no source info available)
+V  [jvm.dll+0x88073e]  (no source info available)
+V  [jvm.dll+0x880e13]  (no source info available)
+V  [jvm.dll+0x27b006]  (no source info available)
+V  [jvm.dll+0x6dd485]  (no source info available)
+V  [jvm.dll+0x6d127a]  (no source info available)
+V  [jvm.dll+0x35b50a]  (no source info available)
+V  [jvm.dll+0x363916]  (no source info available)
+V  [jvm.dll+0x34fe93]  (no source info available)
+V  [jvm.dll+0x350118]  (no source info available)
+V  [jvm.dll+0x328aec]  (no source info available)
+V  [jvm.dll+0x32978e]  (no source info available)
+V  [jvm.dll+0x8449a5]  (no source info available)
+V  [jvm.dll+0x3b9a08]  (no source info available)
+V  [jvm.dll+0x82d68c]  (no source info available)
+V  [jvm.dll+0x454f2e]  (no source info available)
+V  [jvm.dll+0x456db1]  (no source info available)
+C  [jli.dll+0x52a3]  (no source info available)
+C  [ucrtbase.dll+0x21bb2]  (no source info available)
+C  [KERNEL32.DLL+0x17374]  (no source info available)
+C  [ntdll.dll+0x4cc91]  (no source info available)
+
+Lock stack of current Java thread (top to bottom):
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffcba6c4618, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001fe6ea89480 WorkerThread "GC Thread#0"                     [id=17760, stack(0x000000e558200000,0x000000e558300000) (1024K)]
+  0x000001fe6ea9dc80 ConcurrentGCThread "G1 Main Marker"            [id=3656, stack(0x000000e558300000,0x000000e558400000) (1024K)]
+  0x000001fe6ea9e6a0 WorkerThread "G1 Conc#0"                       [id=1964, stack(0x000000e558400000,0x000000e558500000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcb9e0c0da]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffcba744988] Heap_lock - owner thread: 0x000001fe6c7e5250
+
+Heap address: 0x000000070a800000, size: 3928 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total reserved 4022272K, committed 0K, used 0K [0x000000070a800000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcba20c6a9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.011 Loaded shared library C:\Users\ertec\.jdks\openjdk-23.0.2\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff698d60000 - 0x00007ff698d6e000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\java.exe
+0x00007ffce9d10000 - 0x00007ffce9f08000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffce9a80000 - 0x00007ffce9b42000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffce7740000 - 0x00007ffce7a36000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffce7a40000 - 0x00007ffce7b40000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffce38f0000 - 0x00007ffce3907000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\jli.dll
+0x00007ffce38d0000 - 0x00007ffce38eb000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\VCRUNTIME140.dll
+0x00007ffce8170000 - 0x00007ffce8311000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffcd87b0000 - 0x00007ffcd8a4b000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256\COMCTL32.dll
+0x00007ffce7be0000 - 0x00007ffce7c02000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffce9c30000 - 0x00007ffce9cce000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffce7d30000 - 0x00007ffce7d5b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffce7c10000 - 0x00007ffce7d29000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffce7b40000 - 0x00007ffce7bdd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffce9a50000 - 0x00007ffce9a7f000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffce3ae0000 - 0x00007ffce3aec000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\vcruntime140_1.dll
+0x00007ffcd6570000 - 0x00007ffcd65fe000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\msvcp140.dll
+0x00007ffcb9ad0000 - 0x00007ffcba820000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\server\jvm.dll
+0x00007ffce8f70000 - 0x00007ffce9021000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffce9490000 - 0x00007ffce952f000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffce8e50000 - 0x00007ffce8f70000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffce74d0000 - 0x00007ffce74f7000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffce91e0000 - 0x00007ffce924b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffce7150000 - 0x00007ffce719b000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffce1080000 - 0x00007ffce108a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffcdc0b0000 - 0x00007ffcdc0d7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffce7130000 - 0x00007ffce7142000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffce5ba0000 - 0x00007ffce5bb2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffcdfa50000 - 0x00007ffcdfa5a000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\jimage.dll
+0x00007ffce5020000 - 0x00007ffce5221000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffcc8720000 - 0x00007ffcc8754000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffce7550000 - 0x00007ffce75d2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffcd7590000 - 0x00007ffcd759f000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\instrument.dll
+0x00007ffcdfa30000 - 0x00007ffcdfa4e000 	C:\Users\ertec\.jdks\openjdk-23.0.2\bin\java.dll
+0x00007ffce90b0000 - 0x00007ffce91db000 	C:\WINDOWS\System32\ole32.dll
+0x00007ffce7d60000 - 0x00007ffce80b4000 	C:\WINDOWS\System32\combase.dll
+0x00007ffce8680000 - 0x00007ffce8df0000 	C:\WINDOWS\System32\SHELL32.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\ertec\.jdks\openjdk-23.0.2\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256;C:\Users\ertec\.jdks\openjdk-23.0.2\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2\lib\idea_rt.jar=53080:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 
+java_command: snakegame.ui.MainScreen
+java_class_path (initial): C:\nets2\lab4\target\classes;C:\Users\ertec\.m2\repository\com\google\guava\guava\33.0.0-jre\guava-33.0.0-jre.jar;C:\Users\ertec\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\ertec\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\ertec\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\ertec\.m2\repository\org\checkerframework\checker-qual\3.41.0\checker-qual-3.41.0.jar;C:\Users\ertec\.m2\repository\com\google\errorprone\error_prone_annotations\2.23.0\error_prone_annotations-2.23.0.jar;C:\Users\ertec\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar;C:\Users\ertec\.m2\repository\io\reactivex\rxjava3\rxjava\3.1.6\rxjava-3.1.6.jar;C:\Users\ertec\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 257949696                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MarkStackSizeMax                         = 536870912                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 4118806528                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602176                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122093568                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 121962496                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4118806528                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\dotnet\;C:\Users\ertec\AppData\Local\Programs\Python\Launcher\;C:\Users\ertec\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\ertec\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ertec\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2\bin;
+USERNAME=ertec
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD
+TMP=C:\Users\ertec\AppData\Local\Temp
+TEMP=C:\Users\ertec\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+OS uptime: 0 days 2:05 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (16 cores per cpu, 2 threads per core) family 23 model 104 stepping 1 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, rdpid, f16c
+Processor Information for the first 16 processors :
+  Max Mhz: 1801, Current Mhz: 1801, Mhz Limit: 1801
+
+Memory: 4k page, system-wide physical 15709M (3026M free)
+TotalPageFile size 15709M (AvailPageFile size 5M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 317M, peak: 321M
+
+vm_info: OpenJDK 64-Bit Server VM (23.0.2+7-58) for windows-amd64 JRE (23.0.2+7-58), built on 2024-11-29T09:34:55Z with MS VC++ 17.6 (VS2022)
+
+END.
